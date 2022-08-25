@@ -1,37 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
+import Product from '../Components/Product'
+import affiliation from '../data/affiliation.json'
 
 export default function Home() {
+
+  const jsonMapper =  affiliation.map(item =>
+    <Product link={item.link} img={item.img} />
+  );
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Charity</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+    <div style={{ display:'flex' , width:'100%', flexDirection:'column'}}>
+      <h1 style={{ color: 'darkgreen'}}>
          Assalumu Alaykoum, Bienvenue sur Charity
-        </h1>
-
-        <p className={styles.description}>
-          Assalumu Alaykoum, Bienvenue sur Charity
-        </p>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      </h1>
+      <div style={{display:'flex', alignItems:'center'}}>
+       {jsonMapper}
+       </div>
     </div>
   )
 }
