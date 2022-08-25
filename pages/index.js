@@ -5,7 +5,7 @@ import affiliation from '../data/affiliation.json'
 export default function Home() {
 
   const jsonMapper =  affiliation.map(item =>
-    <Product link={item.link} img={item.img} />
+    <Product key={item.id} link={item.link} img={item.img} />
   );
   return (
     <div style={{ display:'flex' , width:'100%', flexDirection:'column'}}>
