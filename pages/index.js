@@ -12,11 +12,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-         Assalumu' Alaykoum, Bienvenue sur Charity
+         Assalumu Alaykoum, Bienvenue sur Charity
         </h1>
 
         <p className={styles.description}>
-          Assalumu' Alaykoum, Bienvenue sur Charity
+          Assalumu Alaykoum, Bienvenue sur Charity
         </p>
       </main>
 
